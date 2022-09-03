@@ -14,6 +14,22 @@ export default function HexViewer({ data }: HexViewerProps) {
    * everything!
    */
 
+  const handleClick = (id: string) => {
+    console.log("Start " + id);
+    const allActiveClasses = Array.from(
+      document.getElementsByClassName("active-element")
+    );
+    allActiveClasses.forEach((element) => {
+      element.classList.remove("active-element");
+    });
+    const allWithClass = Array.from(document.getElementsByClassName(id));
+    allWithClass.forEach((element) => {
+      element.classList.add("active-element");
+    });
+
+    console.log("End " + id);
+  };
+
   return (
     <>
       <pre
@@ -30,7 +46,7 @@ export default function HexViewer({ data }: HexViewerProps) {
         <Grid container item xs={12} md={6} className="table-viewer">
           <Grid container item xs={1} md={1} />
           <Grid container item xs={10} md={10}>
-            <HexTable hexArray={dataToHex(data)} />
+            <HexTable hexArray={dataToHex(data)} handleClick={handleClick} />
           </Grid>
           <Grid container item xs={1} md={1} />
         </Grid>
@@ -38,7 +54,7 @@ export default function HexViewer({ data }: HexViewerProps) {
         <Grid container item xs={12} md={6} className="table-viewer">
           <Grid container item xs={1} md={1} />
           <Grid container item xs={10} md={10}>
-            <TextTable textArray={dataToText(data)} />
+            <TextTable textArray={dataToText(data)} handleClick={handleClick} />
           </Grid>
           <Grid container item xs={1} md={1} />
         </Grid>

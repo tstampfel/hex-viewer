@@ -5,6 +5,21 @@
     justify-content: center;
     vertical-align: center;
   }
+
+  .hex-table-item-value {
+    text-align: center;
+    background-color: #f3ede3;
+    justify-content: center;
+    vertical-align: center;
+    cursor: pointer;
+  }
+  .hex-table-item-value:hover {
+    background-color: #ccc;
+  }
+
+  .active-element {
+    background-color: #ccc;
+  }
 }
 
 #table-container {
