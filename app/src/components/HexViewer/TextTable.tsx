@@ -12,7 +12,7 @@ const TextTable: FunctionComponent<TextTableProps> = ({
   return (
     <Grid container>
       <TableHeader />
-      <Grid container columns={20} className="hex-table-header">
+      <Grid container columns={19} className="hex-table">
         {textArray.map((rowArray: string[]) =>
           rowArray.map((value: string, index: number) => {
             if (index === 0) {

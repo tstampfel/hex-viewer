@@ -27,16 +27,22 @@ export default function HexViewer({ data }: HexViewerProps) {
         <br />
       </pre>
       <Grid container id="table-container">
-        <Grid container item xs={12} md={6}>
-          <HexTable hexArray={dataToHex(data)} />
+        <Grid container item xs={12} md={6} className="table-viewer">
+          <Grid container item xs={1} md={1} />
+          <Grid container item xs={10} md={10}>
+            <HexTable hexArray={dataToHex(data)} />
+          </Grid>
+          <Grid container item xs={1} md={1} />
         </Grid>
 
-        <Grid container item xs={12} md={6}>
-          <TextTable textArray={dataToText(data)} />
+        <Grid container item xs={12} md={6} className="table-viewer">
+          <Grid container item xs={1} md={1} />
+          <Grid container item xs={10} md={10}>
+            <TextTable textArray={dataToText(data)} />
+          </Grid>
+          <Grid container item xs={1} md={1} />
         </Grid>
       </Grid>
     </>
   );
 }
-
-//new TextDecoder("utf-8").decode(props.data as BufferSource)

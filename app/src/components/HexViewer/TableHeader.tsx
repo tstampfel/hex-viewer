@@ -7,7 +7,12 @@ interface TableHeaderProps {}
 const TableHeader: FunctionComponent<TableHeaderProps> = () => {
   return (
     <>
-      <Grid container columns={20} className="hex-table-header">
+      <Grid
+        container
+        columns={19}
+        className="hex-table"
+        style={{ borderBottom: "1px solid black" }}
+      >
         {header.map((value: string, index: number) => {
           if (index === 0) {
             return (

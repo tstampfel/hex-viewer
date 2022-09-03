@@ -13,7 +13,7 @@ const HexTable: FunctionComponent<HexTableProps> = ({
     <Grid container>
       <TableHeader />
 
-      <Grid container columns={20} className="hex-table-header">
+      <Grid container columns={19} className="hex-table">
         {hexArray.map((rowArray: string[]) =>
           rowArray.map((value: string, index: number) => {
             if (index === 0) {
