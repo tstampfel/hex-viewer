@@ -20,19 +20,27 @@ const TextTable: FunctionComponent<TextTableProps> = ({
           rowArray.map((item: TableValue, index: number) => {
             if (index === 0) {
               return (
-                <Grid item xs={3} md={3} className="hex-table-item">
+                <Grid
+                  key={`hex-viewer-item-text-${item.id}-${index}`}
+                  item
+                  xs={3}
+                  md={3}
+                  className="hex-table-item"
+                >
                   <span style={{ fontWeight: "bold" }}>{item.value}</span>
                 </Grid>
               );
             } else {
               return (
                 <Grid
+                  key={`hex-viewer-item-text-${item.id}`}
                   item
                   xs={1}
                   md={1}
                   className={`hex-table-item-value ${item.id}`}
+                  onClick={() => handleClick(item.id)}
                 >
-                  <span onClick={() => handleClick(item.id)}>{item.value}</span>
+                  <span>{item.value}</span>
                 </Grid>
               );
             }

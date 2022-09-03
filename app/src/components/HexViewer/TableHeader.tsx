@@ -16,13 +16,25 @@ const TableHeader: FunctionComponent<TableHeaderProps> = () => {
         {header.map((value: string, index: number) => {
           if (index === 0) {
             return (
-              <Grid item xs={3} md={3} className="hex-table-item">
+              <Grid
+                key={`hex-viewer-header-${value}-${index}`}
+                item
+                xs={3}
+                md={3}
+                className="hex-table-item"
+              >
                 <span style={{ fontWeight: "bold" }}>{value}</span>
               </Grid>
             );
           } else {
             return (
-              <Grid item xs={1} md={1} className="hex-table-item">
+              <Grid
+                key={`hex-viewer-header-${value}-${index}`}
+                item
+                xs={1}
+                md={1}
+                className="hex-table-item"
+              >
                 <span style={{ fontWeight: "bold" }}>{value}</span>
               </Grid>
             );
