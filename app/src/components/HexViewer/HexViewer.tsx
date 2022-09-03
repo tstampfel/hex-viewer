@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import { dataToHex } from "../../utils/hexUtils";
+import { dataToHex, dataToText } from "../../utils/hexUtils";
 import HexTable from "./HexTable";
 import TextTable from "./TextTable";
 
@@ -15,25 +15,27 @@ export default function HexViewer({ data }: HexViewerProps) {
    */
 
   return (
-    <pre
-      style={{
-        overflowWrap: "break-word",
-        whiteSpace: "pre-wrap",
-        wordBreak: "break-all",
-      }}
-    >
-      Here comes the HexViewer
-      <br />
+    <>
+      <pre
+        style={{
+          overflowWrap: "break-word",
+          whiteSpace: "pre-wrap",
+          wordBreak: "break-all",
+        }}
+      >
+        Here comes the HexViewer
+        <br />
+      </pre>
       <Grid container id="table-container">
         <Grid container item xs={12} md={6}>
-          <HexTable />
+          <HexTable hexArray={dataToHex(data)} />
         </Grid>
 
         <Grid container item xs={12} md={6}>
-          <TextTable />
+          <TextTable textArray={dataToText(data)} />
         </Grid>
       </Grid>
-    </pre>
+    </>
   );
 }
 
