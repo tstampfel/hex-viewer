@@ -1,24 +1,24 @@
 .hex-table {
   .hex-table-item {
     text-align: center;
-    background-color: #f3ede3;
+    background-color: #f0f6f7;
     justify-content: center;
     vertical-align: center;
   }
 
   .hex-table-item-value {
     text-align: center;
-    background-color: #f3ede3;
+    background-color: #f0f6f7;
     justify-content: center;
     vertical-align: center;
     cursor: pointer;
   }
   .hex-table-item-value:hover {
-    background-color: #ccc;
+    background-color: #b3b9ba;
   }
 
   .active-element {
-    background-color: #ccc;
+    background-color: #b3b9ba;
   }
 }
 

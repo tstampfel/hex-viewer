@@ -15,7 +15,6 @@ export default function HexViewer({ data }: HexViewerProps) {
    */
 
   const handleClick = (id: string) => {
-    console.log("Start " + id);
     const allActiveClasses = Array.from(
       document.getElementsByClassName("active-element")
     );
@@ -26,8 +25,6 @@ export default function HexViewer({ data }: HexViewerProps) {
     allWithClass.forEach((element) => {
       element.classList.add("active-element");
     });
-
-    console.log("End " + id);
   };
 
   return (
